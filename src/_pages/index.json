@@ -1,0 +1,19 @@
+{
+  "slider": {
+    "title": "Who are we?",
+    "slides": [
+      {
+        "style": "clear",
+        "content": "A small collaborative of freelance web development specialists with decades of experience..."
+      },
+      {
+        "style": "filled",
+        "content": "...who want to help build your identity online.\nFinding out what makes you tick, and bringing your personality to the web."
+      },
+      {
+        "style": "clear",
+        "content": "This is another topic. I’m not sure what it will say yet, but I want it to be different."
+      }
+    ]
+  }
+}

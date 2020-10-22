@@ -1,0 +1,36 @@
+@import "fractal";
+
+.fractal-slider {
+  position: relative;
+  height: 16rem;
+  width: 22rem;
+
+  &__slide {
+    position: absolute;
+    left: calc(50% - 11rem);
+    top: calc(50% - 8rem);
+
+    > .fractal {
+      width: 22rem;
+      max-width: 140vw;
+      height: auto;
+    }
+
+    &__content {
+      top: 0;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      > * {
+        display: block;
+        max-width: 48%;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{% from "./_fractal.njk" import fractal %}
+
+{% macro fractalSlider(slides) %}
+<div class="fractal-slider">
+    {% for slide in slides %}
+    <div class="fractal-slider__slide">
+        {{ fractal(slide.style) }}
+        <div class="fractal-slider__slide__content">
+            <p>{{ slide.content }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endmacro %}

@@ -1,0 +1,51 @@
+@import "global/variables";
+
+/*
+Global partials
+*/
+@import "partials/header";
+@import "partials/nav";
+@import "partials/hamburger";
+
+body {
+  overflow: hidden;
+}
+
+html {
+  font-family: Yrsa, serif;
+  font-size: $font-size-320;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $color-neutral;
+  color: $color-neutral-text;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: $font-size-768;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: $font-size-992;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: $font-size-1200;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  html {
+    font-size: $font-size-1500;
+  }
+}
+

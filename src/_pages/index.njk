@@ -1,0 +1,40 @@
+---
+permalink: "index.html"
+---
+
+{% extends "../_layouts/_withHeaderAndNav.njk" %}
+{% from "../_includes/macros/_frameStripe.njk" import frameStripe %}
+{% from "../_includes/macros/_fractalSlider.njk" import fractalSlider %}
+
+{% block content %}
+    <div class="frames">
+        {% call frameStripe("frame-1", "frames__frame frame-1") %}
+            <div class="frame-1__content">
+                <p>Need a website?</p>
+                <p>You've come to the right place...</p>
+            </div>
+        {% endcall %}
+        <section class="frames__frame frame-2" id="frame-2">
+            <header>
+                <h1>Who are we?</h1>
+            </header>
+            {{ fractalSlider(slider.slides) }}
+        </section>
+        <div class="frames__next">
+            <svg width="30" height="40" viewBox="0 0 30 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 2.00001C17 0.895436 16.1046 2.81274e-06 15 0C13.8954 -2.81274e-06 13 0.895425 13 1.99999L17 2.00001ZM13.5857 39.4142C14.3667 40.1953 15.6331 40.1953 16.4141 39.4142L29.1421 26.6863C29.9231 25.9053 29.9231 24.639 29.1421 23.8579C28.361 23.0769 27.0947 23.0768 26.3137 23.8579L14.9999 35.1716L3.68624 23.8578C2.90519 23.0768 1.63886 23.0768 0.857811 23.8578C0.0767603 24.6389 0.0767566 25.9052 0.857803 26.6863L13.5857 39.4142ZM13 1.99999L12.9999 38L16.9999 38L17 2.00001L13 1.99999Z"
+                      fill="#240E44"/>
+            </svg>
+        </div>
+    </div>
+{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="/assets/home.css"/>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="/assets/home.js"></script>
+{% endblock %}

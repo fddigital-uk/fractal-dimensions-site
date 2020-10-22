@@ -1,0 +1,30 @@
+.frames {
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+
+  &__frame {
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  &__next {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 15px - #{$spacing});
+    padding: $spacing;
+    cursor: pointer;
+    animation: moveArrow 1.5s alternate infinite;
+  }
+}
+
+@keyframes moveArrow {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: -$spacing / 2;
+  }
+}

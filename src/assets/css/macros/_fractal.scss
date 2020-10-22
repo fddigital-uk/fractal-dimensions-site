@@ -1,0 +1,13 @@
+.fractal {
+  &--clear {
+
+  }
+
+  &--filled {
+    fill: rgba(126, 24, 124, 0.2);
+
+    path {
+      stroke: none;
+    }
+  }
+}

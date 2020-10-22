@@ -1,0 +1,123 @@
+.hamburger {
+  --hamburger-stroke: 0.15rem;
+  --hamburger-gap: 0.3rem;
+  --hamburger-width: 1.3rem;
+  --hamburger-pos-adjust: 1;
+  --hamburger-duration: 0.5s;
+  --hamburger-colour: #{$color-one};
+
+  width: var(--hamburger-width);
+  height: calc((var(--hamburger-gap) * 2) + (var(--hamburger-stroke) * 3));
+  position: relative;
+  cursor: pointer;
+  display: grid;
+  align-items: center;
+
+  &__lines,
+  &__lines:before,
+  &__lines:after {
+    height: var(--hamburger-stroke);
+    border-radius: var(--hamburger-stroke);
+    border-color: var(--hamburger-colour);
+    border-width: 0px;
+    box-sizing: border-box;
+    background-color: var(--hamburger-colour);
+    position: absolute;
+    width: var(--hamburger-width);
+  }
+
+  &__lines:before {
+    content: "";
+    --hamburger-pos-adjust: -1;
+    transform: translateY(
+        calc((var(--hamburger-stroke) + var(--hamburger-gap)) * -1)
+    );
+  }
+
+  &__lines:after {
+    content: "";
+    transform: translateY(calc(var(--hamburger-stroke) + var(--hamburger-gap)));
+  }
+}
+
+.closed .hamburger__spin {
+  & .hamburger__lines:before,
+  & .hamburger__lines:after {
+    animation: hamburger-spin-reverse var(--hamburger-duration) forwards;
+  }
+
+  & .hamburger__lines {
+    animation: hamburger-spin-middle-reverse var(--hamburger-duration) forwards
+    calc(var(--hamburger-duration) / 2);
+  }
+}
+
+.open .hamburger__spin {
+  & .hamburger__lines:before,
+  & .hamburger__lines:after {
+    animation: hamburger-spin var(--hamburger-duration) forwards;
+  }
+
+  & .hamburger__lines {
+    animation: hamburger-spin-middle var(--hamburger-duration) forwards
+    calc(var(--hamburger-duration) / 2);
+  }
+}
+
+@keyframes hamburger-spin-middle-reverse {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes hamburger-spin-reverse {
+  0% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(
+        calc(
+          (var(--hamburger-stroke) + var(--hamburger-gap)) *
+          var(--hamburger-pos-adjust)
+        )
+    );
+  }
+}
+
+@keyframes hamburger-spin-middle {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(calc(45deg * var(--hamburger-pos-adjust)));
+  }
+}
+
+@keyframes hamburger-spin {
+  0% {
+    transform: translateY(
+        calc(
+          (var(--hamburger-stroke) + var(--hamburger-gap)) *
+          var(--hamburger-pos-adjust)
+        )
+    );
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .hamburger {
+    --hamburger-stroke: 5px;
+  }
+}
