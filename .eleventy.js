@@ -1,7 +1,13 @@
 const htmlmin = require('html-minifier');
+const pluginSass = require("eleventy-plugin-sass");
+
+sassPluginOptions = {
+  sourcemaps: true,
+}
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.addPlugin(pluginSass, sassPluginOptions);
 
   // Watch our compiled assets for changes
   eleventyConfig.addWatchTarget('./src/compiled-assets/');

@@ -63,11 +63,6 @@ module.exports = {
           name: 'vendor',
           chunks: 'all',
         },
-        pages: {
-          test: /[\\/]pages[\\/]/,
-          name: '[name]',
-          chunks: 'all',
-        },
       },
     },
   },

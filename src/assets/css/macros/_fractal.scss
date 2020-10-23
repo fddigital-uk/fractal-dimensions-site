@@ -1,10 +1,10 @@
 .fractal {
   &--clear {
-
+    fill: $color-neutral;
   }
 
   &--filled {
-    fill: rgba(126, 24, 124, 0.2);
+    fill: #e5d0e5;
 
     path {
       stroke: none;
