@@ -19,6 +19,5 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   window.addEventListener('resize', setVH);
-
   setVH();
 });

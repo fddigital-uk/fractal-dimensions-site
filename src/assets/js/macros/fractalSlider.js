@@ -1,46 +1,51 @@
-import gsap from 'gsap';
+import gsap, { TimelineLite } from 'gsap';
 
 class FractalSlider {
   constructor(element, zIndexStart, currentPos) {
     this.element = element;
     this.currentPos = currentPos ?? 0;
     this.zIndexStart = zIndexStart ?? 0;
+    this.inProgress = false;
     this.init();
   }
 
   init() {
     this.slides = Array.from(this.element.children);
     this.setZIndex();
-
-    this.slides.forEach((s, i) => {
-      const info = this.getSlideTransforms(i);
-      s.style.transform = `translateX(${info.x}) translateY(${info.y}) scale(${info.scale})`;
-      s.style.filter = `blur(${info.blur}) opacity(${info.opacity})`;
-    });
+    this.slideTo(1);
   }
 
   previous() {
-    this.move(-1);
+    return this.move(-1);
   }
 
   next() {
-    this.move(1);
+    return this.move(1);
   }
 
   move(amount) {
+    if (this.inProgress) {
+      return false;
+    }
+    this.inProgress = true;
     this.currentPos += amount;
     this.setZIndex();
-    this.slides.forEach((s, i) => {
-      const info = this.getSlideTransforms(i, amount);
-      gsap.to(s, {
-        x: info.x,
-        y: info.y,
-        scale: info.scale,
-        duration: info.duration,
-        filter: `blur(${info.blur}) opacity(${info.opacity})`,
-        delay: info.delay,
-      });
+
+    const tl = new TimelineLite({
+      onComplete: () => {
+        this.inProgress = false;
+      },
     });
+
+    tl.addLabel('start');
+
+    this.slides.forEach((s, i) => {
+      const transforms = this.getSlideTransforms(i, amount);
+      tl.to(s, transforms, 'start');
+    });
+
+    tl.duration(2);
+    return true;
   }
 
   getSlideTransforms(slideNumber, change = 0) {
@@ -56,7 +61,8 @@ class FractalSlider {
       scale = 0.8;
       blur = '4px';
       opacity = 0;
-      duration = ((change > 0 && slideNumber < this.currentPos) || (change < 0 && slideNumber > this.currentPos)) ? 1 : 2;
+      duration = ((change > 0 && slideNumber < this.currentPos)
+        || (change < 0 && slideNumber > this.currentPos)) ? 2 : 2;
       delay = 0;
     }
 
@@ -74,18 +80,19 @@ class FractalSlider {
 
     if (Math.abs(this.currentPos - slideNumber) === 1) {
       opacity = 0.7;
-      delay = ((change < 0 && slideNumber < this.currentPos) || (change > 0 && slideNumber > this.currentPos)) ? 1 : 0;
-      duration = ((change < 0 && slideNumber < this.currentPos) || (change > 0 && slideNumber > this.currentPos)) ? 2 : 2;
+      delay = ((change < 0 && slideNumber < this.currentPos)
+        || (change > 0 && slideNumber > this.currentPos)) ? 1 : 0;
+      duration = ((change < 0 && slideNumber < this.currentPos)
+        || (change > 0 && slideNumber > this.currentPos)) ? 2 : 2;
     }
 
     return {
       x,
       y,
       scale,
-      blur,
-      opacity,
-      delay,
       duration,
+      filter: `blur(${blur}) opacity(${opacity})`,
+      delay,
     };
   }
 
@@ -101,6 +108,14 @@ class FractalSlider {
         const value = this.zIndexStart + this.currentPos - i;
         el.style.zIndex = value.toString();
       });
+  }
+
+  slideTo(number) {
+    this.currentPos = number - 1;
+    this.slides.forEach((s, i) => {
+      const transforms = this.getSlideTransforms(i);
+      gsap.set(s, transforms);
+    });
   }
 }
 

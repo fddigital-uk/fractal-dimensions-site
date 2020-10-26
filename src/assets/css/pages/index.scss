@@ -14,6 +14,7 @@
 
 .frame-1 {
   top: -100vh;
+  overflow: visible;
 
   .frame-stripe__stripe {
     padding-top: $spacing-medium;
@@ -27,6 +28,12 @@
     font-size: 1.6rem;
     text-align: center;
     max-width: 15rem;
+  }
+}
+
+.frame-2 {
+  h1 {
+    margin: 0 0 6vh 0;
   }
 }
 
