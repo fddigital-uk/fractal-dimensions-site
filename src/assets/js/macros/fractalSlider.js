@@ -12,7 +12,7 @@ class FractalSlider {
   init() {
     this.slides = Array.from(this.element.children);
     this.setZIndex();
-    this.slideTo(1);
+    this.slideTo(this.currentPos + 1);
   }
 
   previous() {
@@ -44,7 +44,7 @@ class FractalSlider {
       tl.to(s, transforms, 'start');
     });
 
-    tl.duration(2);
+    tl.duration(1);
     return true;
   }
 
@@ -62,7 +62,7 @@ class FractalSlider {
       blur = '4px';
       opacity = 0;
       duration = ((change > 0 && slideNumber < this.currentPos)
-        || (change < 0 && slideNumber > this.currentPos)) ? 2 : 2;
+        || (change < 0 && slideNumber > this.currentPos)) ? 1 : 2;
       delay = 0;
     }
 
@@ -83,7 +83,7 @@ class FractalSlider {
       delay = ((change < 0 && slideNumber < this.currentPos)
         || (change > 0 && slideNumber > this.currentPos)) ? 1 : 0;
       duration = ((change < 0 && slideNumber < this.currentPos)
-        || (change > 0 && slideNumber > this.currentPos)) ? 2 : 2;
+        || (change > 0 && slideNumber > this.currentPos)) ? 1 : 2;
     }
 
     return {

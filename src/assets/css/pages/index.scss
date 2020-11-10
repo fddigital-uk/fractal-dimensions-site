@@ -2,8 +2,9 @@
 @import "../macros/frameStripe";
 @import "../macros/frames";
 @import "../macros/fractalSlider";
+@import "../macros/fadeSlider";
 
-.frame-1, .frame-2 {
+.frame-1, .frame-2, .frame-3 {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -37,3 +38,12 @@
   }
 }
 
+.frame-3 {
+  z-index: 30;
+  background-color: $color-three;
+  color: $color-three-text;
+
+  h1 {
+    margin-bottom: 0.2rem;
+  }
+}

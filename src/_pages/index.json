@@ -4,7 +4,7 @@
     "slides": [
       {
         "style": "clear",
-        "content": "A small collaborative of freelance web development specialists with decades of experience..."
+        "content": "A small collaborative of freelance web designers, developers and marketers with decades of experience..."
       },
       {
         "style": "filled",
@@ -15,5 +15,8 @@
         "content": "This is another topic. I’m not sure what it will say yet, but I want it to be different."
       }
     ]
+  },
+  "helpSlide": {
+    "title": "How can we help?"
   }
 }

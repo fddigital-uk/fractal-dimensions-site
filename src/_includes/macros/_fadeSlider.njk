@@ -1,0 +1,12 @@
+{% macro fadeSlider() %}
+    <div class="fade-slider">
+        <div class="fade-slider__titles-container">
+            <div class="fade-slider__titles">
+
+            </div>
+        </div>
+        <div class="fade-slider__slides">
+            {{ caller() }}
+        </div>
+    </div>
+{% endmacro %}

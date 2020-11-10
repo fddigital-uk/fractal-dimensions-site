@@ -5,6 +5,7 @@
   position: relative;
 
   &__frame {
+    position: absolute;
     height: calc(var(--vh, 1vh) * 100);
     width: 100vw;
     overflow: hidden;
@@ -17,6 +18,8 @@
     padding: $spacing;
     cursor: pointer;
     animation: moveArrow 1.5s alternate infinite;
+    z-index: 100;
+    filter: contrast(0.5);
   }
 }
 

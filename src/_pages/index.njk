@@ -5,6 +5,7 @@ permalink: "index.html"
 {% extends "../_layouts/_withHeaderAndNav.njk" %}
 {% from "../_includes/macros/_frameStripe.njk" import frameStripe %}
 {% from "../_includes/macros/_fractalSlider.njk" import fractalSlider %}
+{% from "../_includes/macros/_fadeSlider.njk" import fadeSlider %}
 
 {% block content %}
     <div class="frames">
@@ -16,9 +17,29 @@ permalink: "index.html"
         {% endcall %}
         <section class="frames__frame frame-2" id="frame-2">
             <header>
-                <h1>Who are we?</h1>
+                <h1>{{ slider.title }}</h1>
             </header>
             {{ fractalSlider(slider.slides) }}
+        </section>
+        <section class="frames__frame frame-3" id="frame-3">
+            <header>
+                <h1>{{ helpSlide.title }}</h1>
+            </header>
+            {% call fadeSlider() %}
+                <div data-title="Design">
+                    <p>We’ll get to know you, your company, what makes you tick.</p>
+                    <p>We want to express your brand identity right into the heart of the design of the web site.</p>
+                    <p>Express yourself, help your users understand exactly what you are about.</p>
+                </div>
+                <div data-title="Development">
+                    <p>We'll work with you to choose the right software for the job.</p>
+                    <p>Our mantra is "simplifying complexity" for a reason. Why use WordPress if you don't need all the plugins? Why do a complete custom build if other simpler solutions are out there?</p>
+                    <p>We use the latest tools, wherever we can, to help speed up development and ensure your site's code isn't old before it's even released.</p>
+                </div>
+                <div data-title="Marketing">
+                    <p>Marketing as a forethought, not an afterthought...</p>
+                </div>
+            {% endcall %}
         </section>
         <div class="frames__next">
             <svg width="30" height="40" viewBox="0 0 30 40" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -65,6 +65,10 @@ class FrameManager {
     }
   }
 
+  adjustActionIndex(amount) {
+    this.currentActionIndex += amount;
+  }
+
   previous() {
     if (this.currentActionIndex - 1 < 0) {
       return;

@@ -3,7 +3,7 @@ const NAV_DIRECTIONS = {
   DOWN: 'DOWN',
   LEFT: 'LEFT',
   RIGHT: 'RIGHT',
-}
+};
 
 class NavInputController {
   startPos = null;
@@ -12,11 +12,45 @@ class NavInputController {
   constructor(callback) {
     this.callback = callback;
     this.init();
+    this.ticking = false;
   }
 
   init() {
     window.addEventListener('touchstart', (e) => this.touchStart(e));
     window.addEventListener('touchend', (e) => this.touchEnd(e));
+    let last_known_scroll_position = window.scrollY;
+    document.onwheel = (e) => {
+      this.scrollMove(e.deltaY);
+    };
+    let ticking = false;
+    window.addEventListener('scroll', (e) => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          this.scrollMove(window.scrollY - last_known_scroll_position);
+          last_known_scroll_position = window.scrollY;
+          ticking = false;
+        });
+
+        ticking = true;
+      }
+    });
+  }
+
+  scrollMove(amount) {
+    if (!this.ticking) {
+      if (amount > 1) {
+        this.ticking = true;
+        this.callback(NAV_DIRECTIONS.UP);
+      } else if (amount < -1) {
+        this.ticking = true;
+        this.callback(NAV_DIRECTIONS.DOWN);
+      }
+      if (this.ticking) {
+        setTimeout(() => {
+          this.ticking = false;
+        }, 1000);
+      }
+    }
   }
 
   touchStart(e) {

@@ -1,0 +1,101 @@
+.fade-slider {
+  &__titles-container {
+    display: flex;
+    justify-content: center;
+    height: 6.5rem;
+  }
+
+  &__titles {
+    transform-origin: center center;
+    transform: rotateZ(-90deg);
+    text-align: right;
+    position: relative;
+    top: -1.2rem;
+    height: 8rem;
+
+    > div:not(:first-child) {
+      margin-top: 40px;
+    }
+
+    > div {
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    > div.fade-slider__titles--inactive {
+      opacity: 0.5;
+    }
+
+    > div.fade-slider__titles--active {
+      opacity: 1;
+    }
+  }
+  &__slides {
+    position: relative;
+    height: 42vh;
+    width: 28rem;
+    max-width: 100vw;
+
+    > div {
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      margin-top: 0rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      box-sizing: border-box;
+
+      &.fade-slider__slides--active {
+        opacity: 1;
+        transition: opacity 0.5s ease-in;
+      }
+
+      &.fade-slider__slides--inactive {
+        transition: opacity 0.5s ease-out;
+      }
+
+      > * {
+        margin: 0;
+        &:not(:first-child) {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .fade-slider {
+    &__titles-container {
+      height: auto;
+    }
+    &__titles {
+      height: auto;
+      top: 0.5rem;
+    }
+    &__slides {
+      > div {
+        margin-top: 3rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 980px) {
+
+  .fade-slider {
+    &__titles {
+      left: -3px;
+    }
+  }
+}
