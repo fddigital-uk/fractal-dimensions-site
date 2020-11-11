@@ -20,11 +20,15 @@ class NavInputController {
     window.addEventListener('touchend', (e) => this.touchEnd(e));
     let last_known_scroll_position = window.scrollY;
     document.onwheel = (e) => {
+      if (e.srcElement === document) return;
+      console.dir(e);
       this.scrollMove(e.deltaY);
     };
     let ticking = false;
     window.addEventListener('scroll', (e) => {
+      if (e.srcElement === document) return;
       if (!ticking) {
+        console.dir(e);
         window.requestAnimationFrame(() => {
           this.scrollMove(window.scrollY - last_known_scroll_position);
           last_known_scroll_position = window.scrollY;

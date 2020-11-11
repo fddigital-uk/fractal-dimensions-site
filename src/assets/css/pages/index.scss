@@ -1,10 +1,11 @@
 @import "../global";
+@import "../partials/contact";
 @import "../macros/frameStripe";
 @import "../macros/frames";
 @import "../macros/fractalSlider";
 @import "../macros/fadeSlider";
 
-.frame-1, .frame-2, .frame-3 {
+.frame-1, .frame-2, .frame-3, .frame-4 {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -38,12 +39,48 @@
   }
 }
 
-.frame-3 {
+.frame-3-4 {
   z-index: 30;
   background-color: $color-three;
   color: $color-three-text;
 
   h1 {
     margin-bottom: 0.2rem;
+  }
+}
+
+.frame-3 {
+  @extend .frame-3-4;
+  position: relative;
+  overflow: visible;
+
+  &:after, &::after {
+    position: absolute;
+    content: '';
+    display: block;
+    left: 0;
+    right: 0;
+    width: 100%;
+    /*height: 4.2rem;
+    bottom: -4.2rem;*/
+    height: calc(100vh - (var(--vh) * 100));
+    bottom: calc((var(--vh) * 100) - 100vh);
+    background-color: $color-three;
+  }
+}
+
+.frame-4 {
+  @extend .frame-3-4;
+
+  &__content {
+    width: 100%;
+    max-width: 30rem;
+    box-sizing: border-box;
+    padding: $spacing;
+
+    > * {
+      box-sizing: border-box;
+      width: 100%;
+    }
   }
 }

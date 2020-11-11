@@ -33,7 +33,16 @@ window.addEventListener('DOMContentLoaded', () => {
     {
       prev: () => fadeSlider.previous(),
     },
+    {},
   ];
 
   const frameManager = new FrameManager('.frames', FRAME_ACTIONS);
+
+  const inputs = document.querySelector('input, textarea');
+
+  Array.from(inputs)
+    .forEach(i => {
+      i.addEventListener('focus', e => e.preventDefault());
+      i.addEventListener('focusin', e => e.preventDefault());
+    });
 });
