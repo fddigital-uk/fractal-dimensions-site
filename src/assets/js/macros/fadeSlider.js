@@ -3,7 +3,7 @@ import gsap, { TimelineLite } from 'gsap';
 class FadeSlider {
   constructor(element, currentPos) {
     this.element = element;
-    this.currentPos = currentPos;
+    this.currentPos = currentPos || 1;
     this.inProgress = false;
     this.titlesElement = null;
     this.init();
@@ -13,9 +13,8 @@ class FadeSlider {
     this.slides = Array.from(this.element.querySelector('.fade-slider__slides').children);
     this.titlesElement = this.element.querySelector('.fade-slider__titles');
     this.slides.forEach((s, i) => {
-      const el = document.createElement('div');
+      const el = document.createElement('h2');
       el.innerText = s.dataset.title;
-      el.addEventListener('click', () => this.slideTo(i));
       this.titlesElement.append(el);
     });
     this.slideTo(this.currentPos);
@@ -35,7 +34,7 @@ class FadeSlider {
 
   slideTo(number) {
     this.titlesElement.children.forEach((s, i) => {
-      if (i === number) {
+      if (i + 1 === number) {
         s.classList.remove('fade-slider__titles--inactive');
         s.classList.add('fade-slider__titles--active');
       } else {
@@ -45,7 +44,7 @@ class FadeSlider {
     });
 
     this.slides.forEach((s, i) => {
-      if (i === number) {
+      if (i + 1 === number) {
         s.classList.remove('fade-slider__slides--inactive');
         s.classList.add('fade-slider__slides--active');
       } else {

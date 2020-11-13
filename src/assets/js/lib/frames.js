@@ -19,7 +19,7 @@ class FrameManager {
   constructor(frameContainer, frameActions) {
     this.container = typeof (frameContainer) === 'string' ? document.querySelector(frameContainer) : frameContainer;
     this.frames = Array.from(this.container.querySelectorAll('.frames__frame'));
-    this.nextFrame = this.container.querySelector('.frames__next');
+    this.nextFrameButton = this.container.querySelector('.frames__next');
     this.currentFrame = 1;
     this.currentActionIndex = 0;
     this.actions = frameActions;
@@ -28,6 +28,29 @@ class FrameManager {
   }
 
   init() {
+    this.setUpListeners();
+    this.inputController = new NavInputController(this.handleMove.bind(this));
+    this.initializeFrames();
+    if (location.hash) {
+      this.handleHashChange();
+    }
+  }
+
+  initializeFrames() {
+    this.frames
+      .forEach((s, i) => {
+        let top = 0;
+        const frameNumber = i + 1;
+        if (this.currentFrame < frameNumber) {
+          top = '100vh';
+        } else if (this.currentFrame > frameNumber) {
+          top = '-100vh';
+        }
+        gsap.set(s, { top });
+      });
+  }
+
+  setUpListeners() {
     window.addEventListener('keydown', (e) => {
       switch (this.FRAME_ACTIONS[this.checkKey(e)]) {
         case this.PREVIOUS_FRAME:
@@ -40,21 +63,40 @@ class FrameManager {
       }
     });
 
-    this.inputController = new NavInputController(this.handleMove.bind(this));
+    window.addEventListener('hashchange', (e) => {
+      this.handleHashChange(e);
+    });
 
-    this.nextFrame.addEventListener('click', () => this.next());
+    Array.from(document.querySelectorAll('a[href^="#"]'))
+      .forEach(el => {
+        el.addEventListener('click',
+          function (e) {
+            if (e.preventDefault) {
+              e.preventDefault();
+            } else {
+              e.returnValue = false;
+            }
 
-    this.frames
-      .forEach((s, i) => {
-        let top = 0;
-        const frameNumber = i + 1;
-        if (this.currentFrame < frameNumber) {
-          top = '100vh';
-        } else if (this.currentFrame > frameNumber) {
-          top = '-100vh';
-        }
-        gsap.set(s, { top });
+            window.location.hash = el.href;
+          });
       });
+
+    this.nextFrameButton.addEventListener('click', () => this.next());
+  }
+
+  handleHashChange(e) {
+    const number = parseInt(location.hash.split('-')
+      .pop());
+    if (isNaN(number)) {
+      return;
+    }
+    const frame = this.actions.find(f => f.frame === number);
+    if (!frame) {
+      return;
+    }
+    this.currentActionIndex = this.actions.indexOf(frame);
+    this.handleFrame(frame.frame, false);
+    window.location.hash = '';
   }
 
   handleMove(direction) {
@@ -94,9 +136,31 @@ class FrameManager {
     this.currentActionIndex += adjust;
   }
 
-  handleFrame(frame) {
+  setUpPreviousAndNextSlides(frame) {
+    const prevFrame = this.actions.filter(f => f.frame === frame - 1)
+      .pop();
+    const nextFrame = this.actions.filter(f => f.frame === frame + 1)
+      .shift();
+
+    if (prevFrame && prevFrame.setStep) {
+      prevFrame.setStep();
+    }
+    if (nextFrame && nextFrame.setStep) {
+      nextFrame.setStep();
+    }
+  }
+
+  handleFrame(frame, animate = true) {
     if (frame <= 0 || frame > this.frames.length || this.inProgress) {
       return;
+    }
+
+    this.setUpPreviousAndNextSlides(frame);
+
+    if (frame === this.frames.length) {
+      this.nextFrameButton.classList.add('hidden');
+    } else {
+      this.nextFrameButton.classList.remove('hidden');
     }
 
     const tl = new TimelineLite({
@@ -105,20 +169,33 @@ class FrameManager {
       },
     });
 
-    this.inProgress = true;
-    tl.addLabel("start");
-    tl.to(this.frames[frame - 2], {
-      top: '-100vh',
-      duration: 1
-    }, "start");
-    tl.to(this.frames[frame - 1], {
-      top: '0',
-      duration: 1
-    }, "start");
-    tl.to(this.frames[frame], {
-      top: '100vh',
-      duration: 1
-    }, "start");
+    this.frames.forEach((f, i) => {
+      if (animate && i + 1 === this.currentFrame) {
+        return;
+      } else if (!animate && i + 1 === frame) {
+        gsap.set(f, { top: '0' });
+        return;
+      }
+      gsap.set(f, { top: (i + 1 < this.currentFrame ? '-100vh' : '100vh') });
+    });
+
+    if (animate) {
+      this.inProgress = true;
+      tl.addLabel('start');
+      tl.to(this.frames[frame - 2], {
+        top: '-100vh',
+        duration: 1
+      }, 'start');
+      tl.to(this.frames[frame - 1], {
+        top: '0',
+        duration: 1
+      }, 'start');
+      tl.to(this.frames[frame], {
+        top: '100vh',
+        duration: 1
+      }, 'start');
+    }
+
     this.currentFrame = frame;
   }
 

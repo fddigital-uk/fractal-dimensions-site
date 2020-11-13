@@ -10,23 +10,23 @@
     transform: rotateZ(-90deg);
     text-align: right;
     position: relative;
-    top: -1.2rem;
-    height: 8rem;
+    font-size: 1rem;
 
     > div:not(:first-child) {
       margin-top: 40px;
     }
 
-    > div {
+    > h2 {
       line-height: 1;
-      cursor: pointer;
+      font-size: 1rem;
+      font-weight: normal;
     }
 
-    > div.fade-slider__titles--inactive {
+    > .fade-slider__titles--inactive {
       opacity: 0.5;
     }
 
-    > div.fade-slider__titles--active {
+    > .fade-slider__titles--active {
       opacity: 1;
     }
   }
