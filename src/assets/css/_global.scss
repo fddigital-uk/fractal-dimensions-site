@@ -29,6 +29,10 @@ body {
   display: none;
 }
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 @media screen and (min-width: 768px) {
   html {
     font-size: $font-size-768;
