@@ -1,5 +1,6 @@
 import '../../css/pages/index.scss';
 import '../global';
+import './contact';
 import FractalSlider from '../macros/fractalSlider';
 import FadeSlider from '../macros/fadeSlider';
 import FrameManager from '../lib/frames';

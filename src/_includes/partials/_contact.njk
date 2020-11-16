@@ -12,7 +12,6 @@
                 action="/thanks/"
                 data-netlify="true"
                 data-netlify-recaptcha="true"
-                onSubmit="return handleContactSubmit()"
         >
             <label for="name">
                 <span>Name*:</span>
@@ -26,6 +25,7 @@
                 <span>Message:</span>
                 <textarea name="message" placeholder="Message"></textarea>
             </label>
+            <div data-netlify-recaptcha="true"></div>
             <label for="send" aria-label="Send">
                 <button type="submit">Send Message</button>
             </label>
