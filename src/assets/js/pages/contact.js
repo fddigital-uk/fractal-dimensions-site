@@ -23,8 +23,6 @@ const handleSubmit = async (e) => {
     ...newData,
   };
 
-  console.dir(submitData);
-
   localStorage.setItem('formData', JSON.stringify(submitData));
 
   const handleError = () => {
