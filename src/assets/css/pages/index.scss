@@ -72,6 +72,11 @@
 .frame-4 {
   @extend .frame-3-4;
 
+  h1 {
+    margin-bottom: 0;
+    margin-top: 3rem;
+  }
+
   &__content {
     width: 100%;
     max-width: 30rem;
@@ -81,6 +86,15 @@
     > * {
       box-sizing: border-box;
       width: 100%;
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+  .frame-4 {
+    h1 {
+      margin-top: 4rem;
     }
   }
 }

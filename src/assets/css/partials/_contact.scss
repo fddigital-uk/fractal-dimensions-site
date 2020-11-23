@@ -71,6 +71,9 @@
 
 @media (min-width: 768px) {
   .contact {
+    &__details {
+      font-size: 1rem;
+    }
     &__form {
       padding: $spacing-medium * 0.75;
       border-radius: $spacing-medium * 0.75;
@@ -93,6 +96,7 @@
 
 @media (min-width: 360px) and (min-height: 1000px) {
   .contact {
+
     &__form {
       padding: $spacing-medium;
       border-radius: $spacing-medium;
