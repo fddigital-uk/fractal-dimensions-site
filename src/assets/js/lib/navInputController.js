@@ -50,7 +50,7 @@ class NavInputController {
       if (this.ticking) {
         setTimeout(() => {
           this.ticking = false;
-        }, 1000);
+        }, 2000);
       }
     }
   }

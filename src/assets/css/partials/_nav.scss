@@ -40,6 +40,7 @@
 
   &.closed &__links {
     animation: nav-links-closed 0.3s forwards;
+    display: none;
   }
 
   &.open &__links {

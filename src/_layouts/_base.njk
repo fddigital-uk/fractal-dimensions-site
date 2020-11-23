@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fractal Dimensions - Web Development Specialists Simplifying Complexity</title>
     <link href="https://fonts.googleapis.com/css2?family=Yrsa:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"/>
     {% block head %}
     {% endblock %}
 </head>
@@ -16,6 +18,20 @@
 
 {% block scripts %}
     <script src="/assets/vendor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <script>
+      window.cookieconsent.initialise({
+        'palette': {
+          'popup': {
+            'background': '#ffffff',
+            'text': '#38146a'
+          },
+          'button': {
+            'background': '#7e187c'
+          }
+        },
+        'theme': 'edgeless'
+      });    </script>
 {% endblock %}
 </body>
 </html>

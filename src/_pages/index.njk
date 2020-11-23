@@ -29,7 +29,7 @@ permalink: "index.html"
                 <div data-title="Design">
                     <p>We’ll get to know you, your company, what makes you tick.</p>
                     <p>We want to express your brand identity right into the heart of the design of the web site.</p>
-                    <p>Express yourself, help your users understand exactly what you are about.</p>
+                    <p>Your potential customers should know exactly what you are about within seconds of hitting your homepage.</p>
                 </div>
                 <div data-title="Development">
                     <p>We'll work with you to choose the right software for the job.</p>
@@ -50,7 +50,7 @@ permalink: "index.html"
         </section>
         <section class="frames__frame frame-4" id="frame-4">
             <header>
-                <h1>Get in Touch</h1>
+                <h1>Get in touch...</h1>
             </header>
             <div class="frame-4__content">
                 {% include "../_includes/partials/_contact.njk" %}
@@ -67,6 +67,7 @@ permalink: "index.html"
 
 {% block head %}
     {{ super() }}
+    <meta name="description" content="Freelance web designers, developers and marketeers collaborating to produce the perfect web solutions for you and your customers.">
     <link rel="stylesheet" type="text/css" href="/assets/home.css"/>
 {% endblock %}
 
