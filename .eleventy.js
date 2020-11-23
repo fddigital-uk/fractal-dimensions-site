@@ -16,6 +16,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/compiled-assets': 'assets' });
   // Copy all images
   eleventyConfig.addPassthroughCopy('src/images');
+  eleventyConfig.addPassthroughCopy('src/*.png');
   eleventyConfig.addPassthroughCopy('src/*.ico');
   eleventyConfig.addPassthroughCopy('src/site.webmanifest');
 
