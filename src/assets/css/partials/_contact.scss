@@ -9,6 +9,7 @@
       padding: 0;
       list-style: none;
       text-align: center;
+      font-size: 1.2rem;
     }
   }
 
@@ -18,13 +19,19 @@
     background-color: $color-one;
     padding: $spacing;
     border-radius: $spacing;
+
     label {
-      display: block;
+      display: grid;
+      grid-template-columns: 5rem auto;
 
       span {
         font-size: 1rem;
         display: block;
       }
+    }
+
+    label.contact__send {
+      display: block;
     }
 
     form {
@@ -68,6 +75,14 @@
       padding: $spacing-medium * 0.75;
       border-radius: $spacing-medium * 0.75;
 
+      label {
+        display: block;
+      }
+
+      .contact__label--textarea {
+        margin-bottom: -0.15rem;
+      }
+
       input, textarea, button {
         padding: 0.4rem;
         font-size: 0.7rem;
@@ -76,7 +91,7 @@
   }
 }
 
-@media (min-width: 360px) and (min-height: 1000px)  {
+@media (min-width: 360px) and (min-height: 1000px) {
   .contact {
     &__form {
       padding: $spacing-medium;

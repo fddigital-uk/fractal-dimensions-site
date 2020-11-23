@@ -60,6 +60,7 @@ class NavInputController {
   }
 
   touchEnd(e) {
+    if (e.target.tagName.toUpperCase() === 'TEXTAREA') return;
     this.endPos = e.changedTouches[0];
     if (this.endPos.screenY - this.startPos.screenY < 0) {
       this.callback(NAV_DIRECTIONS.UP);
