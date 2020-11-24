@@ -163,6 +163,12 @@ class FrameManager {
       this.nextFrameButton.classList.remove('hidden');
     }
 
+    console.log(this.actions[this.currentActionIndex]);
+    if (this.actions[this.currentActionIndex].onStep) {
+      console.log("Action Step");
+      this.actions[this.currentActionIndex].onStep();
+    }
+
     const tl = new TimelineLite({
       onComplete: () => {
         this.inProgress = false;

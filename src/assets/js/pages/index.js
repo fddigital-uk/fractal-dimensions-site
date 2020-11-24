@@ -9,6 +9,20 @@ window.addEventListener('DOMContentLoaded', () => {
   const slider = new FractalSlider(document.querySelector('.fractal-slider'), 50, 0);
   const fadeSlider = new FadeSlider(document.querySelector('.fade-slider'));
 
+  const loadedFiles = {};
+
+  function loadJsFile(filename) {
+    console.log(loadedFiles[filename]);
+    if (loadedFiles[filename]) return;
+    const fileRef = document.createElement('script');
+    fileRef.setAttribute('type', 'text/javascript');
+    fileRef.setAttribute('src', filename);
+    if (typeof fileRef != 'undefined') {
+      document.getElementsByTagName('head')[0].appendChild(fileRef);
+      loadedFiles[filename] = true;
+    }
+  }
+
   const FRAME_ACTIONS = [
     { frame: 1 },
     {
@@ -45,6 +59,10 @@ window.addEventListener('DOMContentLoaded', () => {
     },
     {
       frame: 4,
+      onStep: () => {
+        console.log('RUNNING');
+        loadJsFile('https://www.google.com/recaptcha/api.js');
+      },
     },
   ];
 
