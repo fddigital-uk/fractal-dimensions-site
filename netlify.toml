@@ -1,0 +1,27 @@
+[[redirects]]
+    from = "http://fractaldimensions.io/*"
+    to = "https://fd.digital"
+    status = 301
+    force = true # COMMENT: ensure that we always redirect
+    headers = { X-From = "Netlify" }
+
+[[redirects]]
+    from = "https://fractaldimensions.io/*"
+    to = "https://fd.digital"
+    status = 301
+    force = true # COMMENT: ensure that we always redirect
+    headers = { X-From = "Netlify" }
+
+[[redirects]]
+    from = "https://www.fractaldimensions.io/*"
+    to = "https://fd.digital"
+    status = 301
+    force = true # COMMENT: ensure that we always redirect
+    headers = { X-From = "Netlify" }
+
+[[redirects]]
+    from = "http://www.fractaldimensions.io/*"
+    to = "https://fd.digital"
+    status = 301
+    force = true # COMMENT: ensure that we always redirect
+    headers = { X-From = "Netlify" }
