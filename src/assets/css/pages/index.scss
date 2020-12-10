@@ -14,8 +14,12 @@
   position: absolute;
 }
 
+.frame-2, .frame-3, .frame-4 {
+  top: 100vh;
+}
+
 .frame-1 {
-  top: -100vh;
+  top: 100vh;
   overflow: visible;
 
   .frame-stripe__stripe {
