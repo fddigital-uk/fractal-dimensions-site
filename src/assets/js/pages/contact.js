@@ -1,5 +1,3 @@
-import '../../css/pages/contact.scss';
-
 const encode = (data) => Object.keys(data)
   .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
   .join('&');

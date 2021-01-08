@@ -1,0 +1,14 @@
+{% macro teaser(imgs, title, url, classes) %}
+    <article class="teaser {{ classes }}">
+        <a href="{{ url }}" class="teaser__image_link">
+            <picture>
+                {% for img in imgs.srcs %}
+                <source type="{{ img.type }}" src="{{ img.src }}" />
+                {% endfor %}
+                <img src="{{ imgs.src }}" class="teaser__image {{ imgs.classes }}"/>
+            </picture>
+        </a>
+        <h1 class="teaser__heading"><a href="{{ url }}">{{ title }}</a></h1>
+        {{ caller() }}
+    </article>
+{% endmacro %}

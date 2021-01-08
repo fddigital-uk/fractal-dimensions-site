@@ -1,0 +1,36 @@
+@import "../global/fontVarsBase";
+@import "../global";
+@import "../global/flexboxgrid";
+
+@import "../partials/hero";
+@import "../partials/banner";
+@import "../macros/teaser";
+
+.blog {
+  &__articles {
+    display: grid;
+    grid-gap: $spacing;
+
+  }
+}
+
+.main {
+  --outer-margin: 1rem;
+}
+
+@media (--sm-viewport) {
+  .blog {
+    &__articles {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media (--md-viewport) {
+  .blog {
+    &__articles {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+

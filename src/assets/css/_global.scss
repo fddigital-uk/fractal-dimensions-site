@@ -7,9 +7,6 @@ Global partials
 @import "partials/nav";
 @import "partials/hamburger";
 
-body {
-  overflow: hidden;
-}
 
 html {
   font-family: $font-family;
@@ -26,11 +23,33 @@ body {
 }
 
 .hidden {
-  display: none!important;
+  display: none !important;
 }
 
 .grecaptcha-badge {
   visibility: hidden;
+}
+
+.objf-top {
+  object-position: top;
+}
+
+.objf-center {
+  object-position: center;
+}
+
+.objf-bottom {
+  object-position: bottom;
+}
+
+.main {
+  & > *:not(:first-child) {
+    margin-top: 1rem;
+  }
+}
+
+.cc-window {
+  border: 1px solid $color-two;
 }
 
 @media screen and (min-width: 768px) {

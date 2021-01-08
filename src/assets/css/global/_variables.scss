@@ -7,14 +7,15 @@ $color-two-text: #fff;
 $color-three: #240e44;
 $color-three-text: #fff;
 
-$font-family: Yrsa, serif;
-$font-size-320: 18px;
-$font-size-768: 22px;
-$font-size-992: 26px;
-$font-size-1200: 30px;
-$font-size-1500: 34px;
-
 $spacing: 1rem;
 $spacing-medium: $spacing * 2;
 $spacing-large: $spacing-medium * 2;
 $spacing-xlarge: $spacing-large * 2;
+
+$breakpoint-xs: 576px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1600px;
+
+$main-gradient: linear-gradient(90deg, $color-two 0%, $color-one 100%);
+

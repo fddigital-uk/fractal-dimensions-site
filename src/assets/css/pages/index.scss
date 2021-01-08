@@ -1,9 +1,14 @@
+@import "../global/fontVarsHome";
 @import "../global";
 @import "../partials/contact";
 @import "../macros/frameStripe";
 @import "../macros/frames";
 @import "../macros/fractalSlider";
 @import "../macros/fadeSlider";
+
+body {
+  overflow: hidden;
+}
 
 .frame-1, .frame-2, .frame-3, .frame-4 {
   box-sizing: border-box;

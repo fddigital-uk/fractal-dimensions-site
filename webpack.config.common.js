@@ -7,7 +7,7 @@ module.exports = {
   // Our "entry" point
   entry: {
     home: './src/assets/js/pages/index.js',
-    contact: './src/assets/js/pages/contact.js',
+    blog: './src/assets/js/pages/blog.js',
   },
   output: {
     // The global variable name any `exports` from `index.js` will be available at

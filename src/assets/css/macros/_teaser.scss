@@ -1,0 +1,47 @@
+.teaser {
+  font-size: 1rem;
+
+  & > * {
+    margin: 0;
+  }
+
+  & > *:not(:first-child) {
+    margin-top: 0.2rem;
+  }
+
+  &__image {
+    height: 12rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__heading {
+    color: $color-two;
+    font-size: 1.2rem;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media(--md-viewport) {
+  .teaser {
+    font-size: 0.8rem;
+    &__image {
+      height: 8rem;
+    }
+  }
+}
+
+@media(--lg-viewport) {
+  .teaser {
+    &__image {
+      height: 9rem;
+    }
+  }
+}
