@@ -28,3 +28,8 @@ permalink: "blog/index.html"
           content="Fractal Dimensions Blog - A collection of (hopefully) useful information for those who want a website">
     <link rel="stylesheet" type="text/css" href="/assets/blog.css"/>
 {% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="/assets/blog.js"></script>
+{% endblock %}

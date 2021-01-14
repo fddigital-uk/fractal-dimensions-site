@@ -10,9 +10,25 @@
   }
 
   &__image {
-    height: 12rem;
+    height: 100%;
     width: 100%;
     object-fit: cover;
+
+    &_link {
+      position: relative;
+      display: block;
+      height: 0;
+      padding-bottom: 56.7%;
+    }
+  }
+
+  &__picture {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 
   &__heading {
@@ -32,16 +48,6 @@
 @media(--md-viewport) {
   .teaser {
     font-size: 0.8rem;
-    &__image {
-      height: 8rem;
-    }
   }
 }
 
-@media(--lg-viewport) {
-  .teaser {
-    &__image {
-      height: 9rem;
-    }
-  }
-}
