@@ -1,7 +1,7 @@
 <nav class="nav">
     <ul class="nav__links">
         {% for nav in navigation %}
-            <li><a href="{{ nav.url }}">{{ nav.text }}</a></li>
+            <li><a href="{{ url }}{{ nav.url }}">{{ nav.text }}</a></li>
         {% endfor %}
     </ul>
     <div class="nav__button">
