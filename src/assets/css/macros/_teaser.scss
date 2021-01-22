@@ -1,12 +1,21 @@
 .teaser {
   font-size: 1rem;
+  display: flex;
+  flex-direction: column;
 
-  & > * {
-    margin: 0;
-  }
+  &__content {
+    border-top-width: 0;
+    padding: $spacing;
+    background-color: #faf6fa;
+    flex-grow: 1;
 
-  & > *:not(:first-child) {
-    margin-top: 0.2rem;
+    & > * {
+      margin: 0;
+    }
+
+    & > *:not(:first-child) {
+      margin-top: $spacing / 2;
+    }
   }
 
   &__image {
@@ -34,6 +43,9 @@
   &__heading {
     color: $color-two;
     font-size: 1.2rem;
+    display: inline-block;
+    margin-top: -0.25rem;
+    margin-bottom: -0.25rem;
 
     a {
       text-decoration: none;
@@ -47,7 +59,7 @@
 
 @media(--md-viewport) {
   .teaser {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
 

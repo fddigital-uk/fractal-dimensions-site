@@ -8,7 +8,9 @@
                 <img src="{{ imgs.src }}" class="teaser__image {{ imgs.classes }}"/>
             </picture>
         </a>
-        <h1 class="teaser__heading"><a href="{{ url }}">{{ title }}</a></h1>
-        {{ caller() }}
+        <div class="teaser__content">
+            <h1 class="teaser__heading"><a href="{{ url }}">{{ title }}</a></h1>
+            {{ caller() }}
+        </div>
     </article>
 {% endmacro %}

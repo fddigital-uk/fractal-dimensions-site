@@ -9,8 +9,7 @@
 .blog {
   &__articles {
     display: grid;
-    grid-gap: $spacing;
-
+    grid-gap: $spacing-medium;
   }
 }
 

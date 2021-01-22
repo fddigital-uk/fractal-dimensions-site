@@ -18,5 +18,23 @@
   },
   "helpSlide": {
     "title": "How can we help?"
-  }
+  },
+  "navigation": [
+    {
+      "url": "/#frame-1",
+      "text": "Home"
+    },
+    {
+      "url": "/#frame-2",
+      "text": "Who are we?"
+    },
+    {
+      "url": "/#frame-3",
+      "text": "How can we help?"
+    },
+    {
+      "url": "/#frame-4",
+      "text": "Get in touch"
+    }
+  ]
 }

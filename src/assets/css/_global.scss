@@ -22,6 +22,10 @@ body {
   margin: 0;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: $font-family-headings;
+}
+
 .hidden {
   display: none !important;
 }
@@ -44,11 +48,11 @@ body {
 
 .main {
   & > *:not(:first-child) {
-    margin-top: 1rem;
+    margin-top: $spacing-medium;
   }
 
   & > *:last-child {
-    margin-bottom: 1rem;
+    margin-bottom: $spacing-medium;
   }
 }
 

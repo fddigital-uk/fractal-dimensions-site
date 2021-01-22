@@ -1,9 +1,8 @@
 <nav class="nav">
     <ul class="nav__links">
-        <li><a href="{{ url }}/#frame-1">Home</a></li>
-        <li><a href="{{ url }}/#frame-2">Who are we?</a></li>
-        <li><a href="{{ url }}/#frame-3">How can we help?</a></li>
-        <li><a href="{{ url }}/#frame-4">Get in touch</a></li>
+        {% for nav in navigation %}
+            <li><a href="{{ nav.url }}">{{ nav.text }}</a></li>
+        {% endfor %}
     </ul>
     <div class="nav__button">
         {% include "./_hamburger.njk" %}
