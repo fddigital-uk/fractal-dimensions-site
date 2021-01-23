@@ -1,0 +1,37 @@
+---
+permalink: "blog/index.html"
+---
+{% extends "../_layouts/_withHeaderAndNav.njk" %}
+{% from "../_includes/macros/_teaser.njk" import teaser %}
+
+{% block content %}
+    <main class="main">
+        {% include "../_includes/partials/_hero.njk" %}
+        <div class="container-fluid">
+            {% include "../_includes/partials/_banner.njk" %}
+        </div>
+        <div class="container-fluid">
+            <div class="blog__articles">
+                {% for article in articles %}
+                    {% call teaser(article.img, article.title) %}
+                        <p>{{ article.text }}</p>
+                    {% endcall %}
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <meta name="description"
+          content="Fractal Dimensions Blog - A collection of (hopefully) useful information for those who want a website">
+    <link rel="stylesheet" type="text/css" href="/assets/blog.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="/assets/blog.js"></script>
+{% endblock %}

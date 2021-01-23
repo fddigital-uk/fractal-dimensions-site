@@ -1,0 +1,97 @@
+.hero {
+  position: relative;
+  height: 55vh;
+
+  body.loaded & {
+    .hero__container {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+
+    &_container {
+      display: block;
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0.5;
+
+      & > picture {
+        font-size: 0;
+      }
+
+      &:before {
+        position: absolute;
+        content: '';
+        display: block;
+        pointer-events: none;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        background: $main-gradient;
+        opacity: 0.4;
+        mix-blend-mode: saturation;
+      }
+    }
+  }
+
+  &__container {
+    transform: translateY(30px);
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 1rem;
+    pointer-events: none;
+
+    h1, h2 {
+      margin: 0;
+    }
+
+    h2 {
+      display: inline;
+      padding: 0 0.3rem 0.1rem;
+      background-color: $color-two;
+      color: $color-two-text;
+      font-size: 1.2rem;
+      box-decoration-break: clone;
+      font-family: $font-family;
+    }
+
+    h1 {
+      display: inline-block;
+      padding: 0 0.3rem;
+      width: auto;
+      background-color: $color-neutral;
+      font-size: 1.8rem;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+@media (--md-viewport) {
+  .hero {
+
+    &__container {
+
+      h1 {
+        width: 50%;
+      }
+    }
+  }
+}

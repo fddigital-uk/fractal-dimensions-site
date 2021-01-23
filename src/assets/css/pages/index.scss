@@ -6,6 +6,10 @@
 @import "../macros/fractalSlider";
 @import "../macros/fadeSlider";
 
+body {
+  overflow: hidden;
+}
+
 .frame-1, .frame-2, .frame-3, .frame-4 {
   box-sizing: border-box;
   display: flex;
