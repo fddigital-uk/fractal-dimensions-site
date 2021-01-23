@@ -15,6 +15,8 @@ $content-bg-alt: rgba(255, 255, 255, 0.9);
 $content-bg-blend-alt: none;
 $content-bg-filter-alt: blur(5px);
 
+$content-border-radius: 17px;
+
 $spacing: 1rem;
 $spacing-medium: $spacing * 2;
 $spacing-large: $spacing-medium * 2;
@@ -22,8 +24,10 @@ $spacing-xlarge: $spacing-large * 2;
 
 $breakpoint-xs: 576px;
 $breakpoint-sm: 768px;
-$breakpoint-md: 992px;
+$breakpoint-md: 1080px;
 $breakpoint-lg: 1600px;
+
+$content-width: 1600px;
 
 $main-gradient: linear-gradient(90deg, $color-two 0%, $color-one 100%);
 

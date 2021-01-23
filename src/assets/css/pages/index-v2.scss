@@ -1,56 +1,40 @@
-@import "../global/fontVarsHome";
+$font-family: Assistant, sans-serif;
+$font-family-headings: Yrsa, serif;
+$font-size-320: 20px;
+$font-size-768: 22px;
+$font-size-992: 22px;
+$font-size-1200: 24px;
+$font-size-1500: 30px;
+
 @import "../global";
+@import "../global/index";
+@import "../macros/infoBox";
+@import "../partials/_pageBackground.scss";
 
-body {
-  background: $main-gradient;
+/* Page specific */
+
+.info-home {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: $spacing-large;
+  justify-content: center;
 }
 
-.box--one {
-  background: $content-bg;
-  background-blend-mode: $content-bg-blend;
-  backdrop-filter: $content-bg-filter;
-}
-
-.box--two {
-  background: $content-bg-alt;
-  backdrop-filter: $content-bg-filter-alt;
-}
-
-.page {
-  &__bg {
-    opacity: 0.3;
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    z-index: 0;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    svg {
-      width: 120vw;
-    }
+@media (--md-viewport) {
+  .info-home {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
+/* Overrides */
 
-@media (orientation: portrait) {
-  .page {
-    &__bg {
-      &__container {
-        position: relative;
-        transform:  rotate(122deg) translateY(5vh) translateX(5vh);
-        height: 1px;
-        width: 1px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      svg {
-        position: absolute;
-        height: auto;
-        width: 140vh;
-      }
-    }
-  }
+
+.info-box--home {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: $spacing-medium * 1.5 $spacing-medium;
 }
+
+
+

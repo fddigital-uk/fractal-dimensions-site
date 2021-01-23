@@ -1,0 +1,20 @@
+.info-box {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-self: center;
+  width: 100%;
+  max-width: 500px;
+  padding: $spacing;
+
+  & > *:not(:first-child) {
+    margin-top: $spacing;
+    margin-bottom: 0;
+  }
+}
+
+@media (--md-viewport) {
+  .info-box {
+    max-width: none;
+  }
+}
