@@ -7,6 +7,14 @@ $color-two-text: #fff;
 $color-three: #240e44;
 $color-three-text: #fff;
 
+$content-bg: rgba(0, 0, 0, 0.4);
+$content-bg-blend: darken;
+$content-bg-filter: blur(10px);
+
+$content-bg-alt: rgba(255, 255, 255, 0.9);
+$content-bg-blend-alt: none;
+$content-bg-filter-alt: blur(5px);
+
 $spacing: 1rem;
 $spacing-medium: $spacing * 2;
 $spacing-large: $spacing-medium * 2;

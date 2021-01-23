@@ -1,0 +1,56 @@
+@import "../global/fontVarsHome";
+@import "../global";
+
+body {
+  background: $main-gradient;
+}
+
+.box--one {
+  background: $content-bg;
+  background-blend-mode: $content-bg-blend;
+  backdrop-filter: $content-bg-filter;
+}
+
+.box--two {
+  background: $content-bg-alt;
+  backdrop-filter: $content-bg-filter-alt;
+}
+
+.page {
+  &__bg {
+    opacity: 0.3;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 120vw;
+    }
+  }
+}
+
+
+@media (orientation: portrait) {
+  .page {
+    &__bg {
+      &__container {
+        position: relative;
+        transform:  rotate(122deg) translateY(5vh) translateX(5vh);
+        height: 1px;
+        width: 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      svg {
+        position: absolute;
+        height: auto;
+        width: 140vh;
+      }
+    }
+  }
+}

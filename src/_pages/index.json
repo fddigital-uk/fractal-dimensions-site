@@ -1,4 +1,7 @@
 {
+  "meta": {
+    "description": "Freelance web designers, developers and marketeers collaborating to produce the perfect web solutions for you and your customers."
+  },
   "slider": {
     "title": "Who are we?",
     "slides": [
@@ -21,19 +24,19 @@
   },
   "navigation": [
     {
-      "url": "/#frame-1",
+      "url": "#frame-1",
       "text": "Home"
     },
     {
-      "url": "/#frame-2",
+      "url": "#frame-2",
       "text": "Who are we?"
     },
     {
-      "url": "/#frame-3",
+      "url": "#frame-3",
       "text": "How can we help?"
     },
     {
-      "url": "/#frame-4",
+      "url": "#frame-4",
       "text": "Get in touch"
     }
   ]

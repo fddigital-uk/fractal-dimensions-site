@@ -7,6 +7,7 @@ module.exports = {
   // Our "entry" point
   entry: {
     home: './src/assets/js/pages/index.js',
+    index: './src/assets/js/pages/index-v2.js',
     contact: './src/assets/js/pages/contact.js',
   },
   output: {
