@@ -125,7 +125,7 @@
         margin-bottom: -0.15rem;
       }
 
-      input, textarea, button {
+      input, textarea {
         padding: 0.4rem;
       }
     }
@@ -138,13 +138,6 @@
       ul {
         grid-template-columns: 1fr 1fr;
       }
-    }
-  }
-}
-
-@media (min-width: 360px) and (min-height: 1000px) {
-  .contact {
-    &__form {
     }
   }
 }
