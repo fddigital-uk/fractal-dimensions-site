@@ -1,5 +1,23 @@
 {
   "meta": {
     "description": "Freelance web designers, developers and marketeers collaborating to produce the perfect web solutions for you and your customers."
-  }
+  },
+  "navigation": [
+    {
+      "url": "#top",
+      "text": "Back to top"
+    },
+    {
+      "url": "#getintouch",
+      "text": "Get in touch"
+    },
+    {
+      "url": "https://twitter.com/fractalduk",
+      "text": "Twitter"
+    },
+    {
+      "url": "https://instagram.com/fractaldimensionsuk",
+      "text": "Instagram"
+    }
+  ]
 }
