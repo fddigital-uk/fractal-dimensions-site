@@ -2,6 +2,19 @@ const encode = (data) => Object.keys(data)
   .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
   .join('&');
 
+const loadedFiles = {};
+
+function loadJsFile(filename) {
+  if (loadedFiles[filename]) return;
+  const fileRef = document.createElement('script');
+  fileRef.setAttribute('type', 'text/javascript');
+  fileRef.setAttribute('src', filename);
+  if (typeof fileRef != 'undefined') {
+    document.getElementsByTagName('head')[0].appendChild(fileRef);
+    loadedFiles[filename] = true;
+  }
+}
+
 const handleSubmit = async (e) => {
   const currForm = document.querySelector('[name="contact"]');
   const formData = new FormData(currForm);
@@ -63,4 +76,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       });
   }
+
+  loadJsFile('https://www.google.com/recaptcha/api.js');
 });
