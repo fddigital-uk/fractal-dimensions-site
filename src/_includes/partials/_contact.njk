@@ -1,16 +1,17 @@
-<div class="contact">
+<div class="contact space-items">
     <div class="contact__details">
         <ul>
-            <li><span>Email:</span> <a href="mailto:hello@fractaldimensions.io">hello@fd.digital</a></li>
-            <li><span>Telephone:</span> <a href="tel:+441617587575">0161 758 7575</a></li>
+            <li class="box--one"><span>Email:</span> <a href="mailto:hello@fractaldimensions.io">hello@fd.digital</a></li>
+            <li class="box--one"><span>Telephone:</span> <a href="tel:+441617587575">0161 758 7575</a></li>
         </ul>
     </div>
-    <div class="contact__form">
-        <div class="contact__success hidden">
+    <div class="contact__form box--one">
+        <div class="contact__success">
             <h2>Thank you</h2>
-            <p>We have successfully received your query.</p>
+            <p>We have successfully received your query and will get back to you as soon as possible.</p>
         </div>
         <form
+                class="hidden"
                 name="contact"
                 method="post"
                 action="/thanks/"
@@ -28,16 +29,16 @@
             <label for="name" class="contact__label--textarea">
                 <span>Message*:</span>
                 <textarea name="message" placeholder="Message"></textarea></label>
+            <label for="send" aria-label="Send" class="contact__send">
+                <button class="g-recaptcha button" data-sitekey="6LdPg-MZAAAAAO3WomsFKqNyQJt8_gVhxV5606qe"  data-callback='handleContactSubmit'>Send Message
+                </button>
+            </label>
             <small>This site is protected by reCAPTCHA and the Google
                 <a href="https://policies.google.com/privacy" target="_blank" rel="nofollow noopener">Privacy Policy</a>
                 and
                 <a href="https://policies.google.com/terms" target="_blank" rel="nofollow noopener">Terms of Service</a>
                 apply.
             </small>
-            <label for="send" aria-label="Send" class="contact__send">
-                <button class="g-recaptcha" data-sitekey="6LdPg-MZAAAAAO3WomsFKqNyQJt8_gVhxV5606qe"  data-callback='handleContactSubmit'>Send Message
-                </button>
-            </label>
         </form>
     </div>
 </div>

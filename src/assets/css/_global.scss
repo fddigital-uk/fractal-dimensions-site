@@ -59,6 +59,7 @@ p {
 }
 
 .main {
+  position: relative;
   margin-top: calc(var(--component-spacing, 0.5rem) * 5);
 
   & > *:not(:first-child) {
@@ -98,6 +99,7 @@ p {
   line-height: 1;
   border: 2px solid white;
   box-sizing: border-box;
+  cursor: pointer;
 
   &:hover {
     background-color: $color-two;

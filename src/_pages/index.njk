@@ -11,13 +11,13 @@ permalink: "index.html"
     {% include "../_includes/partials/_pageBackground.njk" %}
     <main class="main">
         <section class="info-home container-fluid">
-            {% call infoBox("Need a website?", { text: "Get in Touch!", url: "#"}, "box--one info-box--home") %}
+            {% call infoBox("Need a website?", { text: "Get in Touch!", url: "#getintouch"}, "box--one info-box--home") %}
                 <p>We can help out, the sky’s the limit...</p>
                 <p>- Basic <strong>information site</strong> to high quality <strong>brochure sites</strong></p>
                 <p>- <strong>E-commerce</strong> sites from a simple store to stock management integrations</p>
                 <p>- Completely <strong>bespoke</strong> development, wherever your imagination takes you!</p>
             {% endcall %}
-            {% call infoBox("Need advice?", { text: "Get in Touch!", url: "#"}, "box--one info-box--home") %}
+            {% call infoBox("Need advice?", { text: "Get in Touch!", url: "#getintouch"}, "box--one info-box--home") %}
                 <p>Got an idea for a project but no idea where to start?</p>
                 <p>Had quotes from web development companies or freelancers, but don’t know who to choose?</p>
                 <p>Don’t know if what you’re being told by your existing web development agency is realistic?</p>
@@ -49,7 +49,14 @@ permalink: "index.html"
                 <p>We don't see the point in creating works of art nobody will see. So, we have a vested interest in
                     making sure customers click through for years to come.</p>
             {% endcall %}
+            <a name="getintouch" id="getintouch"></a>
         </div>
+        <section class="container-fluid get-in-touch">
+            <header>
+                <h1>Get in touch</h1>
+            </header>
+            {% include "../_includes/partials/_contact.njk" %}
+        </section>
     </main>
 {% endblock %}
 

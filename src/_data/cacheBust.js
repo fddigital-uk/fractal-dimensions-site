@@ -5,18 +5,18 @@ const cacheBust = () => {
   const files = {
     mainCss: './src/compiled-assets/index.css',
     mainJs: './src/compiled-assets/index.js',
+    //vendorJs: './src/compiled-assets/vendor.js',
   };
 
-  // vendorJs: './src/compiled-assets/vendor.js',
+  return Object.entries(files)
+    .reduce((acc, [key, path]) => {
+      const now = Date.now();
+      const bust = process.env.ELEVENTY_ENV === 'production' ? md5File.sync(path, (_err, hash) => hash) : now;
 
-  return Object.entries(files).reduce((acc, [key, path]) => {
-    const now = Date.now();
-    const bust = process.env.ELEVENTY_ENV === 'production' ? md5File.sync(path, (_err, hash) => hash) : now;
+      acc[key] = bust;
 
-    acc[key] = bust;
-
-    return acc;
-  }, {});
+      return acc;
+    }, {});
 };
 
 module.exports = cacheBust;

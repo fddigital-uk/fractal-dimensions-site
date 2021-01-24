@@ -46,6 +46,11 @@ $font-size-1500: 30px;
   }
 }
 
+.get-in-touch {
+  color: $color-neutral;
+  max-width: 1200px;
+}
+
 @media (--md-viewport) {
   .info-home {
     grid-template-columns: 1fr 1fr;
@@ -54,8 +59,9 @@ $font-size-1500: 30px;
 
 @import "../macros/infoBox";
 @import "../macros/horizInfoBox";
-@import "../partials/who";
+@import "../partials/contact";
 @import "../partials/pageBackground";
+@import "../partials/who";
 
 /* Overrides */
 
@@ -66,6 +72,10 @@ $font-size-1500: 30px;
   text-align: center;
   padding: calc(var(--spacing, 0.5rem) * 3) calc(var(--spacing, 0.5rem) * 2);
   height: 100%;
+}
+
+.footer {
+  position: relative;
 }
 
 
