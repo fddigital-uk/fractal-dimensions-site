@@ -7,9 +7,6 @@ $font-size-1200: 24px;
 $font-size-1500: 30px;
 
 @import "../global";
-@import "../macros/infoBox";
-@import "../partials/who";
-@import "../partials/pageBackground";
 
 /* Page specific */
 
@@ -54,6 +51,11 @@ $font-size-1500: 30px;
     grid-template-columns: 1fr 1fr;
   }
 }
+
+@import "../macros/infoBox";
+@import "../macros/horizInfoBox";
+@import "../partials/who";
+@import "../partials/pageBackground";
 
 /* Overrides */
 

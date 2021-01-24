@@ -107,6 +107,16 @@ p {
   }
 }
 
+.space-items {
+  & > * {
+    margin: 0;
+  }
+
+  & > *:not(:first-child) {
+    margin-top: calc(var(--spacing) * 2);
+  }
+}
+
 .cc-window {
   display: grid;
   grid-template-columns: 4fr 1fr;

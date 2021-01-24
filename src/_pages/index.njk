@@ -4,7 +4,8 @@ permalink: "index.html"
 
 {% extends "../_layouts/_withHeaderAndNav.njk" %}
 
-{% from "../_includes/macros/infoBox.njk" import infoBox %}
+{% from "../_includes/macros/_infoBox.njk" import infoBox %}
+{% from "../_includes/macros/_horizInfoBox.njk" import horizInfoBox %}
 
 {% block content %}
     {% include "../_includes/partials/_pageBackground.njk" %}
@@ -25,6 +26,26 @@ permalink: "index.html"
         </section>
         <div class="container-fluid">
             {% include "../_includes/partials/_who.njk" %}
+        </div>
+        <div class="container-fluid space-items">
+            {% call horizInfoBox("Design") %}
+                <p>We’ll get to know you, your company, what makes you tick.</p>
+                <p>We want to express your brand identity right into the heart of the design of the web site.</p>
+                <p>Your potential customers should know exactly what you are about within seconds of hitting your
+                    homepage.</p>
+            {% endcall %}
+            {% call horizInfoBox("Development") %}
+                <p>We’ll get to know you, your company, what makes you tick.</p>
+                <p>We want to express your brand identity right into the heart of the design of the web site.</p>
+                <p>Your potential customers should know exactly what you are about within seconds of hitting your
+                    homepage.</p>
+            {% endcall %}
+            {% call horizInfoBox("Marketing") %}
+                <p>We’ll get to know you, your company, what makes you tick.</p>
+                <p>We want to express your brand identity right into the heart of the design of the web site.</p>
+                <p>Your potential customers should know exactly what you are about within seconds of hitting your
+                    homepage.</p>
+            {% endcall %}
         </div>
     </main>
 {% endblock %}

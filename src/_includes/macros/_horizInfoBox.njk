@@ -1,0 +1,10 @@
+{% macro horizInfoBox(title, class) %}
+    <article class="h-info-box {{ class }}">
+        <header>
+            <h1 class="box--one h-info-box__header">{{ title }}</h1>
+        </header>
+        <div class="h-info-box__content box--two">
+            {{ caller() }}
+        </div>
+    </article>
+{% endmacro %}

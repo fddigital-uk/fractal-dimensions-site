@@ -1,0 +1,27 @@
+.h-info-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--spacing);
+
+  &__header {
+    margin: 0;
+    padding: var(--spacing);
+    text-align: center;
+  }
+
+  &__content {
+    p {
+      margin: 0;
+    }
+
+    p:not(:first-child) {
+      margin-top: var(--spacing);
+    }
+  }
+}
+
+@media (--sm-viewport) {
+  .h-info-box {
+    grid-template-columns: minmax(250px, 1fr) 4fr;
+  }
+}
