@@ -3,10 +3,11 @@ const md5File = require('md5-file');
 const cacheBust = () => {
   // A "map" of files to cache bust
   const files = {
-    mainCss: './src/compiled-assets/home.css',
-    mainJs: './src/compiled-assets/home.js',
-    vendorJs: './src/compiled-assets/vendor.js',
+    mainCss: './src/compiled-assets/index.css',
+    mainJs: './src/compiled-assets/index.js',
   };
+
+  // vendorJs: './src/compiled-assets/vendor.js',
 
   return Object.entries(files).reduce((acc, [key, path]) => {
     const now = Date.now();
