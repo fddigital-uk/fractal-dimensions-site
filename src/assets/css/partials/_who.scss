@@ -1,0 +1,43 @@
+.who {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--spacing);
+  margin-top: var(--spacing);
+
+  &__image {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    picture {
+      width: 40%;
+      min-width: 160px;
+    }
+  }
+
+  &__intro {
+    p {
+      margin: 0;
+    }
+
+    p:not(:first-child) {
+      margin-top: var(--spacing);
+    }
+  }
+
+  &__container {
+    > header {
+      text-align: center;
+    }
+  }
+}
+
+@media (--md-viewport) {
+  .who {
+    grid-template-columns: 1fr 3fr;
+    &__image {
+      & > picture {
+        width: 100%;
+      }
+    }
+  }
+}

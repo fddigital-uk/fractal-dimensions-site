@@ -1,0 +1,19 @@
+{% macro infoBox(title, button, class) %}
+    <article class="info-box {{ class }}">
+        {% if title %}
+        <header>
+            <h1>{{ title }}</h1>
+        </header>
+        {% endif %}
+        {% if caller() %}
+        <div class="info-box-content">
+            {{ caller() }}
+        </div>
+        {% endif %}
+        {% if button %}
+        <footer>
+            <a href="{{ button.url }}" class="button">{{ button.text }}</a>
+        </footer>
+        {% endif %}
+    </article>
+{% endmacro %}

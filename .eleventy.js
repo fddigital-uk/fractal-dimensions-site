@@ -20,6 +20,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/*.ico');
   eleventyConfig.addPassthroughCopy('src/site.webmanifest');
 
+  eleventyConfig.addNunjucksShortcode('currentYear', function() {
+    return (new Date).getFullYear().toString();
+  });
+
   if (process.env.ELEVENTY_ENV === 'production') {
     eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
       if (outputPath.endsWith('.html')) {

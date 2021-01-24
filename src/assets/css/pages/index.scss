@@ -1,109 +1,70 @@
-@import "../global/fontVarsHome";
+$font-family: Assistant, sans-serif;
+$font-family-headings: Yrsa, serif;
+$font-size-320: 20px;
+$font-size-768: 22px;
+$font-size-992: 22px;
+$font-size-1200: 24px;
+$font-size-1500: 30px;
+
 @import "../global";
-@import "../partials/contact";
-@import "../macros/frameStripe";
-@import "../macros/frames";
-@import "../macros/fractalSlider";
-@import "../macros/fadeSlider";
+@import "../macros/infoBox";
+@import "../partials/who";
+@import "../partials/pageBackground";
 
-body {
-  overflow: hidden;
-}
+/* Page specific */
 
-.frame-1, .frame-2, .frame-3, .frame-4 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
+.info-home {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: calc(var(--component-spacing, 0.5rem) * 3);
   justify-content: center;
+}
+
+.box {
+  &--one, &--two {
+    border-radius: $content-border-radius;
+    padding: calc(var(--spacing, 0.5rem) * 1.5);
+
+    h1, h2, h3, h4, h5 {
+      display: block;
+      margin-top: -0.15em;
+      margin-bottom: -0.35em;
+    }
+  }
+}
+
+.box--one {
+  background: $content-bg;
+  background-blend-mode: $content-bg-blend;
+  backdrop-filter: $content-bg-filter;
+  color: $color-neutral;
+}
+
+.box--two {
+  background: $content-bg-alt;
+  backdrop-filter: $content-bg-filter-alt;
+
+  h1, h2, h3, h4, h5 {
+    color: $color-one;
+  }
+}
+
+@media (--md-viewport) {
+  .info-home {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Overrides */
+
+
+.info-box--home {
   align-items: center;
-  position: absolute;
-}
-
-.frame-2, .frame-3, .frame-4 {
-  top: 100vh;
-}
-
-.frame-1 {
-  top: 0;
-  overflow: visible;
-
-  .frame-stripe__stripe {
-    padding-top: $spacing-medium;
-  }
-
-  &__content {
-    position: relative;
-    z-index: 20;
-    color: $color-one-text;
-    font-weight: bold;
-    font-size: 1.6rem;
-    text-align: center;
-    max-width: 15rem;
-  }
-}
-
-.frame-2 {
-  h1 {
-    margin: 0 0 6vh 0;
-  }
-}
-
-.frame-3-4 {
-  z-index: 30;
-  background-color: $color-three;
-  color: $color-three-text;
-
-  h1 {
-    margin-bottom: 0.2rem;
-  }
-}
-
-.frame-3 {
-  @extend .frame-3-4;
-  position: relative;
-  overflow: visible;
-
-  &:after, &::after {
-    position: absolute;
-    content: '';
-    display: block;
-    left: 0;
-    right: 0;
-    width: 100%;
-    /*height: 4.2rem;
-    bottom: -4.2rem;*/
-    height: calc(100vh - (var(--vh) * 100));
-    bottom: calc((var(--vh) * 100) - 100vh);
-    background-color: $color-three;
-  }
-}
-
-.frame-4 {
-  @extend .frame-3-4;
-
-  h1 {
-    margin-bottom: 0;
-    margin-top: 3rem;
-  }
-
-  &__content {
-    width: 100%;
-    max-width: 30rem;
-    box-sizing: border-box;
-    padding: $spacing;
-
-    > * {
-      box-sizing: border-box;
-      width: 100%;
-    }
-  }
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--spacing, 0.5rem) * 3) calc(var(--spacing, 0.5rem) * 2);
+  height: 100%;
 }
 
 
-@media (min-width: 768px) {
-  .frame-4 {
-    h1 {
-      margin-top: 4rem;
-    }
-  }
-}
+

@@ -6,28 +6,51 @@ $color-two: #7e187c;
 $color-two-text: #fff;
 $color-three: #240e44;
 $color-three-text: #fff;
+$main-gradient: linear-gradient(90deg, $color-two 0%, $color-one 100%);
+
+$content-width: 1600px;
 
 $content-bg: rgba(0, 0, 0, 0.4);
 $content-bg-blend: darken;
 $content-bg-filter: blur(10px);
 
-$content-bg-alt: rgba(255, 255, 255, 0.9);
+$content-bg-alt: rgba(255, 255, 255, 0.6);
 $content-bg-blend-alt: none;
 $content-bg-filter-alt: blur(5px);
 
 $content-border-radius: 17px;
 
-$spacing: 1rem;
-$spacing-medium: $spacing * 2;
-$spacing-large: $spacing-medium * 2;
-$spacing-xlarge: $spacing-large * 2;
+$spacing: --spacing;
 
 $breakpoint-xs: 576px;
 $breakpoint-sm: 768px;
 $breakpoint-md: 1080px;
 $breakpoint-lg: 1600px;
 
-$content-width: 1600px;
+:root {
+  --gutter-width: 1rem;
+  --outer-margin: 1rem;
+  --xs-min: #{$breakpoint-xs};
+  --sm-min: #{$breakpoint-sm};
+  --md-min: #{$breakpoint-md};
+  --lg-min: #{$breakpoint-lg};
+  --spacing: 1rem;
+  --component-spacing: 1rem;
+}
 
-$main-gradient: linear-gradient(90deg, $color-two 0%, $color-one 100%);
+@custom-media --sm-viewport only screen and (min-width: #{$breakpoint-sm});
+@custom-media --md-viewport only screen and (min-width: #{$breakpoint-md});
+@custom-media --lg-viewport only screen and (min-width: #{$breakpoint-lg});
 
+@media (--md-viewport) {
+  :root {
+    --spacing: 1rem;
+    --component-spacing: 1.5rem;
+  }
+}
+
+@media (--lg-viewport) {
+  :root {
+    --component-spacing: 1.75rem;
+  }
+}

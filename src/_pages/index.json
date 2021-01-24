@@ -1,43 +1,5 @@
 {
   "meta": {
     "description": "Freelance web designers, developers and marketeers collaborating to produce the perfect web solutions for you and your customers."
-  },
-  "slider": {
-    "title": "Who are we?",
-    "slides": [
-      {
-        "style": "clear",
-        "content": "A small collaborative of freelance web designers, developers and marketers with decades of experience..."
-      },
-      {
-        "style": "filled",
-        "content": "...who want to help build your identity online.\nFinding out what makes you tick, and bringing your personality to the web."
-      },
-      {
-        "style": "clear",
-        "content": "We are here to guide you through the development process from start to finish."
-      }
-    ]
-  },
-  "helpSlide": {
-    "title": "How can we help?"
-  },
-  "navigation": [
-    {
-      "url": "#frame-1",
-      "text": "Home"
-    },
-    {
-      "url": "#frame-2",
-      "text": "Who are we?"
-    },
-    {
-      "url": "#frame-3",
-      "text": "How can we help?"
-    },
-    {
-      "url": "#frame-4",
-      "text": "Get in touch"
-    }
-  ]
+  }
 }

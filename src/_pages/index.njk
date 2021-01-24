@@ -3,72 +3,37 @@ permalink: "index.html"
 ---
 
 {% extends "../_layouts/_withHeaderAndNav.njk" %}
-{% from "../_includes/macros/_frameStripe.njk" import frameStripe %}
-{% from "../_includes/macros/_fractalSlider.njk" import fractalSlider %}
-{% from "../_includes/macros/_fadeSlider.njk" import fadeSlider %}
+
+{% from "../_includes/macros/infoBox.njk" import infoBox %}
 
 {% block content %}
-    <div class="frames">
-        {% call frameStripe("frame-1", "frames__frame frame-1") %}
-            <div class="frame-1__content">
-                <p>Need a website?</p>
-                <p>You've come to the right place...</p>
-            </div>
-        {% endcall %}
-        <section class="frames__frame frame-2" id="frame-2">
-            <header>
-                <h1>{{ slider.title }}</h1>
-            </header>
-            {{ fractalSlider(slider.slides) }}
-        </section>
-        <section class="frames__frame frame-3" id="frame-3">
-            <header>
-                <h1>{{ helpSlide.title }}</h1>
-            </header>
-            {% call fadeSlider() %}
-                <div data-title="Design">
-                    <p>We’ll get to know you, your company, what makes you tick.</p>
-                    <p>We want to express your brand identity right into the heart of the design of the web site.</p>
-                    <p>Your potential customers should know exactly what you are about within seconds of hitting your homepage.</p>
-                </div>
-                <div data-title="Development">
-                    <p>We'll work with you to choose the right software for the job.</p>
-                    <p>Our mantra is "simplifying complexity" for a reason. Why use WordPress if you don't need all the
-                        plugins? Why do a complete custom build if other simpler solutions are out there?</p>
-                    <p>We use the latest tools, wherever we can, to help speed up development and ensure your site's
-                        code isn't old before it's even released.</p>
-                </div>
-                <div data-title="Marketing">
-                    <p>If we build it, they <em>will</em> come... because we'll build marketing into your online presence from
-                        the ground up.</p>
-                    <p>Search engine optimised? Check. Social media channels? Check. Content to make your customers
-                        <em>swoon</em>? You betcha.</p>
-                    <p>We don't see the point in creating works of art nobody will see. So, we have a vested interest in
-                        making sure customers click through for years to come.</p>
-                </div>
+    {% include "../_includes/partials/_pageBackground.njk" %}
+    <main class="main">
+        <section class="info-home container-fluid">
+            {% call infoBox("Need a website?", { text: "Get in Touch!", url: "#"}, "box--one info-box--home") %}
+                <p>We can help out, the sky’s the limit...</p>
+                <p>- Basic <strong>information site</strong> to high quality <strong>brochure sites</strong></p>
+                <p>- <strong>E-commerce</strong> sites from a simple store to stock management integrations</p>
+                <p>- Completely <strong>bespoke</strong> development, wherever your imagination takes you!</p>
+            {% endcall %}
+            {% call infoBox("Need advice?", { text: "Get in Touch!", url: "#"}, "box--one info-box--home") %}
+                <p>Got an idea for a project but no idea where to start?</p>
+                <p>Had quotes from web development companies or freelancers, but don’t know who to choose?</p>
+                <p>Don’t know if what you’re being told by your existing web development agency is realistic?</p>
+                <p><strong>No problem!</strong></p>
             {% endcall %}
         </section>
-        <section class="frames__frame frame-4" id="frame-4">
-            <header>
-                <h1>Get in touch...</h1>
-            </header>
-            <div class="frame-4__content">
-                {% include "../_includes/partials/_contact.njk" %}
-            </div>
-        </section>
-        <div class="frames__next">
-            <svg width="30" height="40" viewBox="0 0 30 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17 2.00001C17 0.895436 16.1046 2.81274e-06 15 0C13.8954 -2.81274e-06 13 0.895425 13 1.99999L17 2.00001ZM13.5857 39.4142C14.3667 40.1953 15.6331 40.1953 16.4141 39.4142L29.1421 26.6863C29.9231 25.9053 29.9231 24.639 29.1421 23.8579C28.361 23.0769 27.0947 23.0768 26.3137 23.8579L14.9999 35.1716L3.68624 23.8578C2.90519 23.0768 1.63886 23.0768 0.857811 23.8578C0.0767603 24.6389 0.0767566 25.9052 0.857803 26.6863L13.5857 39.4142ZM13 1.99999L12.9999 38L16.9999 38L17 2.00001L13 1.99999Z"
-                      fill="#240E44"/>
-            </svg>
+        <div class="container-fluid">
+            {% include "../_includes/partials/_who.njk" %}
         </div>
-    </div>
+    </main>
 {% endblock %}
 
 {% block head %}
     {{ super() }}
-    <meta name="description" content="Freelance web designers, developers and marketeers collaborating to produce the perfect web solutions for you and your customers.">
-    <link rel="stylesheet" type="text/css" href="/assets/home.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/index.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block scripts %}

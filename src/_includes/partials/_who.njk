@@ -1,0 +1,25 @@
+{% from "../macros/infoBox.njk" import infoBox %}
+
+{% call infoBox("Who are Fractal Dimensions?", null, "box--two who__container") %}
+    <div class="who">
+        <div class="who__image">
+            <picture>
+                <source srcset="/images/nicktaylor.webp" type="image/webp">
+                <img width="100%" src="/images/nicktaylor.png" />
+            </picture>
+        </div>
+        <div class="who__intro">
+            <p>OK, let’s get this out in the open...</p>
+            <p>Right now, it’s just me, the guy in the picture, but <em>hold on</em>...</p>
+            <p>I have been developing websites since the late 90s and have been in love with what can be
+                achieved on the web ever since and it’s only getting better! I have a vast amount of
+                experience, working on small scale content management system based sites to multi million
+                pound turnover ecommerce sites.</p>
+            <p>I am, of course, not without ambition and will grow to meet the needs of demand. I know
+                designers and marketers that are more than happy to work together creatively to provide you
+                with a fantastic service. I’ll do the leg work with them, so everything runs seamlessly.</p>
+            <p>It’s important that all work is completed to a high standard. So if you ever decide to move
+                away, the next person that takes over the code can do so with ease.</p>
+        </div>
+    </div>
+{% endcall %}

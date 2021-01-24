@@ -6,9 +6,7 @@ const path = require('path');
 module.exports = {
   // Our "entry" point
   entry: {
-    home: './src/assets/js/pages/index.js',
-    index: './src/assets/js/pages/index-v2.js',
-    blog: './src/assets/js/pages/blog.js',
+    index: './src/assets/js/pages/index.js',
   },
   output: {
     // The global variable name any `exports` from `index.js` will be available at
