@@ -1,4 +1,5 @@
 import '../global';
+import './contact';
 import '../../css/pages/index.scss';
 
 window.addEventListener('DOMContentLoaded', () => {
