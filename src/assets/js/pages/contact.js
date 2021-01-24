@@ -6,12 +6,16 @@ const loadedFiles = {};
 
 function loadJsFile(filename) {
   if (loadedFiles[filename]) return;
+  console.log('LOADED FILE' + filename);
+  loadedFiles[filename] = true;
   const fileRef = document.createElement('script');
   fileRef.setAttribute('type', 'text/javascript');
   fileRef.setAttribute('src', filename);
   if (typeof fileRef != 'undefined') {
     document.getElementsByTagName('head')[0].appendChild(fileRef);
     loadedFiles[filename] = true;
+  } else {
+    loadedFiles[filename] = null;
   }
 }
 
@@ -76,6 +80,9 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       });
   }
+  console.log('DOM CONTENT LOADED');
 
-  loadJsFile('https://www.google.com/recaptcha/api.js');
+  window.addEventListener('scroll', () => {
+    loadJsFile('https://www.google.com/recaptcha/api.js');
+  });
 });
