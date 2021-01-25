@@ -33,4 +33,11 @@ window.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     setVH();
   }, 500);
+
+  window.addEventListener('scroll', () => {
+    const s = document.createElement('script');
+    const tag = document.getElementsByTagName('script')[0];
+    s.src = 'https://cdn.iubenda.com/iubenda.js';
+    tag.parentNode.insertBefore(s, tag);
+  });
 });

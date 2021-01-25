@@ -6,7 +6,6 @@ const loadedFiles = {};
 
 function loadJsFile(filename) {
   if (loadedFiles[filename]) return;
-  console.log('LOADED FILE' + filename);
   loadedFiles[filename] = true;
   const fileRef = document.createElement('script');
   fileRef.setAttribute('type', 'text/javascript');
@@ -80,7 +79,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       });
   }
-  console.log('DOM CONTENT LOADED');
 
   window.addEventListener('scroll', () => {
     loadJsFile('https://www.google.com/recaptcha/api.js');
