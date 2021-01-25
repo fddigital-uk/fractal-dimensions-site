@@ -1,0 +1,16 @@
+{% from "../macros/_socialIcons.njk" import socialIcons %}
+{% macro nav(items, class) %}
+    <nav class="nav">
+        <ul class="nav__links">
+            {% for item in items %}
+                <li><a href="{{ item.url }}">{{ item.text }}</a></li>
+            {% endfor %}
+            <div class="nav__social">
+                {{ socialIcons('nav') }}
+            </div>
+        </ul>
+        <div class="nav__button">
+            {% include "../partials/_hamburger.njk" %}
+        </div>
+    </nav>
+{% endmacro %}
