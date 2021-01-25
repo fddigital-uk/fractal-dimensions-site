@@ -122,6 +122,16 @@ p {
 .cc-window {
   display: grid;
   grid-template-columns: 4fr 1fr;
+  border-radius: $content-border-radius;
+  backdrop-filter: blur(10px);
+  background-blend-mode: darken;
+  background-color: rgba(71, 15, 73, 0.8)!important;
+  color: $color-neutral!important;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  a {
+    color: $color-neutral!important;
+  }
 }
 
 .cc-message {
@@ -135,8 +145,6 @@ p {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  border: 1px solid white!important;
-  border-left: 0;
 }
 
 @media (--sm-viewport) {
