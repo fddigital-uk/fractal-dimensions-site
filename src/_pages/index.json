@@ -8,12 +8,12 @@
       "text": "Back to top"
     },
     {
-      "url": "#getintouch",
-      "text": "Get in touch"
-    },
-    {
       "url": "https://blog.fd.digital",
       "text": "Blog"
+    },
+    {
+      "url": "#getintouch",
+      "text": "Get in touch"
     }
   ]
 }
