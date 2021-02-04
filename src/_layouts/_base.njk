@@ -16,6 +16,14 @@
     <link rel="manifest" href="/site.webmanifest">
     {% block head %}
     {% endblock %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0QBK8S7XNE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0QBK8S7XNE');
+    </script>
 </head>
 <body>
 {% block main %}
