@@ -25,3 +25,8 @@
     status = 301
     force = true # COMMENT: ensure that we always redirect
     headers = { X-From = "Netlify" }
+
+[[headers]]
+    for = "/*"
+    [headers.values]
+        Content-Security-Policy = "default-src 'self'; script-src 'unsafe-inline' https://www.googletagmanager.com; img-src www.googletagmanager.com;"
