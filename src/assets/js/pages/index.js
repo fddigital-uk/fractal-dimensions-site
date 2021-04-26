@@ -4,6 +4,8 @@ import '../../css/pages/index.scss';
 
 window.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('.nav');
+  let loadedPolicy = false;
+
   [].forEach.call(nav.querySelectorAll('a'), (el) => {
     el.addEventListener('click', (e) => {
       nav.classList.remove('open');
@@ -35,9 +37,12 @@ window.addEventListener('DOMContentLoaded', () => {
   }, 500);
 
   window.addEventListener('scroll', () => {
-    const s = document.createElement('script');
-    const tag = document.getElementsByTagName('script')[0];
-    s.src = 'https://cdn.iubenda.com/iubenda.js';
-    tag.parentNode.insertBefore(s, tag);
+    if (!loadedPolicy) {
+      const s = document.createElement('script');
+      const tag = document.getElementsByTagName('script')[0];
+      s.src = 'https://cdn.iubenda.com/iubenda.js';
+      tag.parentNode.insertBefore(s, tag);
+      loadedPolicy = true;
+    }
   });
 });
