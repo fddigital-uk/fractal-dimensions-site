@@ -27,6 +27,14 @@ permalink: "index.html"
         <div class="container-fluid">
             {% include "../_includes/partials/_who.njk" %}
         </div>
+        <div class="container-fluid">
+            {% call infoBox("Testimonial", null, "box--one") %}
+                <p>"We required a front end developer to provide responsive HTML, CSS and JS from a set of already produced designs.</p>
+                <p>Nick produced pixel perfect mark up where required and provided common sense solutions where there was no design in place. We were very impressed with the quality of the work delivered.</p>
+                <p>Having worked with Nick a number times we find him to be knowledgeable, professional and reliable."</p>
+                <p class="text-right"><small>Thomas Butterworth, PLD Works</small></p>
+            {% endcall %}
+        </div>
         <div class="container-fluid space-items">
             {% call horizInfoBox("Design") %}
                 <p>We’ll get to know you, your company, what makes you tick.</p>

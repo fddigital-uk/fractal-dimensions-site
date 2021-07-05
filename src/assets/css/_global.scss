@@ -151,6 +151,10 @@ p {
   box-sizing: border-box;
 }
 
+.text-right {
+  text-align: right;
+}
+
 @media (--sm-viewport) {
   html {
     font-size: $font-size-768;
